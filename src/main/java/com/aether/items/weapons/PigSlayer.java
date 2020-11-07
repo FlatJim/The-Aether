@@ -33,7 +33,7 @@ public class PigSlayer extends AetherSword {
                 double d3 = 5.0D;
                 entityliving.world.addParticle(ParticleTypes.FLAME, (entityliving.getPos().getX() + (double) (entityliving.world.random.nextFloat() * entityliving.getWidth() * 2.0F)) - (double) entityliving.getWidth() - d * d3, (entityliving.getPos().getY() + (double) (entityliving.world.random.nextFloat() * entityliving.getHeight())) - d1 * d3, (entityliving.getPos().getZ() + (double) (entityliving.world.random.nextFloat() * entityliving.getWidth() * 2.0F)) - (double) entityliving.getWidth() - d2 * d3, d, d1, d2);
             }
-            entityliving.remove();
+            entityliving.kill();
         }
         return super.postHit(itemstack, entityliving, entityliving1);
     }

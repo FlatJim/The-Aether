@@ -180,13 +180,13 @@ public class AetherBlocks {
 
     static {
         AETHER_DIRT = register("aether_dirt", new Block(FabricBlockSettings.copy(Blocks.DIRT)), buildingBlock());
-        AETHER_GRASS = register("aether_grass", new AetherGrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).materialColor(MaterialColor.CYAN)), buildingBlock());
-        AETHER_ENCHANTED_GRASS = register("enchanted_aether_grass", new EnchantedAetherGrassBlock(FabricBlockSettings.copyOf(AETHER_GRASS).materialColor(MaterialColor.GOLD)), buildingBlock());
+        AETHER_GRASS = register("aether_grass", new AetherGrassBlock(FabricBlockSettings.copyOf(Blocks.GRASS_BLOCK).materialColor(MapColor.CYAN)), buildingBlock());
+        AETHER_ENCHANTED_GRASS = register("enchanted_aether_grass", new EnchantedAetherGrassBlock(FabricBlockSettings.copyOf(AETHER_GRASS).materialColor(MapColor.GOLD)), buildingBlock());
         AMBROSIUM_ORE = register("ambrosium_ore", new Block(FabricBlockSettings.copyOf(Blocks.COAL_ORE)), buildingBlock());
-        BLUE_PORTAL = register("blue_portal", new PortalBlock(AbstractBlock.Settings.of(Material.PORTAL, MaterialColor.BLUE).nonOpaque().noCollision().ticksRandomly().dropsNothing().blockVision(AetherBlocks::never).strength(-1.0F).sounds(BlockSoundGroup.GLASS).luminance((state) -> 11)));
-        HOLYSTONE = register("holystone", new Block(FabricBlockSettings.of(Material.STONE, MaterialColor.GRAY).strength(0.5F, 10.0F).sounds(BlockSoundGroup.STONE)), buildingBlock());
-        HOLYSTONE_BRICK = register("holystone_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).materialColor(MaterialColor.WHITE)), buildingBlock());
-        MOSSY_HOLYSTONE = register("mossy_holystone", new Block(FabricBlockSettings.copyOf(Blocks.MOSSY_COBBLESTONE).materialColor(MaterialColor.WHITE)), buildingBlock());
+        BLUE_PORTAL = register("blue_portal", new PortalBlock(AbstractBlock.Settings.of(Material.PORTAL, MapColor.BLUE).nonOpaque().noCollision().ticksRandomly().dropsNothing().blockVision(AetherBlocks::never).strength(-1.0F).sounds(BlockSoundGroup.GLASS).luminance((state) -> 11)));
+        HOLYSTONE = register("holystone", new Block(FabricBlockSettings.of(Material.STONE, MapColor.GRAY).strength(0.5F, 10.0F).sounds(BlockSoundGroup.STONE)), buildingBlock());
+        HOLYSTONE_BRICK = register("holystone_brick", new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).materialColor(MapColor.WHITE)), buildingBlock());
+        MOSSY_HOLYSTONE = register("mossy_holystone", new Block(FabricBlockSettings.copyOf(Blocks.MOSSY_COBBLESTONE).materialColor(MapColor.WHITE)), buildingBlock());
         ZANITE_ORE = register("zanite_ore", new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE)), buildingBlock());
 //        CRYSTAL_SAPLING = register("crystal_sapling", null);
         AEROGEL = register("aerogel", new Block(FabricBlockSettings.of(Material.SOIL).strength(1.0F, 2000.0F).sounds(BlockSoundGroup.GLASS)), buildingBlock());
@@ -294,8 +294,8 @@ public class AetherBlocks {
         SENTRY_STAIRS = register("sentry_stairs", new AetherStairsBlock(SENTRY_STONE.getDefaultState()), buildingBlock());
         SENTRY_WALL = register("sentry_wall", new AetherWallBlock(SENTRY_STONE.getDefaultState()), buildingBlock());
         SKYROOT_SAPLING = register("skyroot_sapling", new AetherSaplingBlock(null, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), buildingBlock());
-        SKYROOT_LOG = register("skyroot_log", createLogBlock(MaterialColor.GREEN, MaterialColor.WOOD), buildingBlock());
-        STRIPPED_SKYROOT_LOG = register("stripped_skyroot_log", createLogBlock(MaterialColor.WOOD, MaterialColor.WOOD), buildingBlock());
+        SKYROOT_LOG = register("skyroot_log", createLogBlock(MapColor.GREEN, MapColor.WOOD), buildingBlock());
+        STRIPPED_SKYROOT_LOG = register("stripped_skyroot_log", createLogBlock(MapColor.WOOD, MapColor.WOOD), buildingBlock());
         SKYROOT_LEAVES = register("skyroot_leaves", createLeavesBlock(), buildingBlock());
         SKYROOT_PLANKS = register("skyroot_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS)), buildingBlock());
         SKYROOT_BOOKSHELF = register("skyroot_bookshelf", new Block(FabricBlockSettings.of(Material.WOOD).strength(1.5F).sounds(BlockSoundGroup.WOOD)), buildingBlock());
@@ -304,19 +304,19 @@ public class AetherBlocks {
         SKYROOT_SLAB = register("skyroot_slab", new AetherSlabBlock(SKYROOT_PLANKS.getDefaultState()), buildingBlock());
         SKYROOT_STAIRS = register("skyroot_stairs", new AetherStairsBlock(SKYROOT_PLANKS.getDefaultState()), buildingBlock());
         GOLDEN_OAK_SAPLING = register("golden_oak_sapling", new AetherSaplingBlock(null, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)), buildingBlock());
-        GOLDEN_OAK_LOG = register("golden_oak_log", createLogBlock(MaterialColor.WOOD, MaterialColor.RED), buildingBlock());
-        STRIPPED_GOLDEN_OAK_LOG = register("stripped_golden_oak_log", createLogBlock(MaterialColor.RED, MaterialColor.RED), buildingBlock());
+        GOLDEN_OAK_LOG = register("golden_oak_log", createLogBlock(MapColor.WOOD, MapColor.RED), buildingBlock());
+        STRIPPED_GOLDEN_OAK_LOG = register("stripped_golden_oak_log", createLogBlock(MapColor.RED, MapColor.RED), buildingBlock());
         GOLDEN_OAK_LEAVES = register("golden_oak_leaves", createLeavesBlock(), buildingBlock());
-        GOLDEN_OAK_PLANKS = register("golden_oak_planks", new Block(FabricBlockSettings.copyOf(SKYROOT_PLANKS).materialColor(MaterialColor.RED)), buildingBlock());
+        GOLDEN_OAK_PLANKS = register("golden_oak_planks", new Block(FabricBlockSettings.copyOf(SKYROOT_PLANKS).materialColor(MapColor.RED)), buildingBlock());
         GOLDEN_OAK_FENCE = register("golden_oak_fence", new FenceBlock(FabricBlockSettings.copyOf(GOLDEN_OAK_PLANKS)), buildingBlock());
         GOLDEN_OAK_FENCE_GATE = register("golden_oak_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(GOLDEN_OAK_PLANKS)), buildingBlock());
         GOLDEN_OAK_SLAB = register("golden_oak_slab", new AetherSlabBlock(GOLDEN_OAK_PLANKS.getDefaultState()), buildingBlock());
         GOLDEN_OAK_STAIRS = register("golden_oak_stairs", new AetherStairsBlock(GOLDEN_OAK_PLANKS.getDefaultState()), buildingBlock());
         CRYSTAL_SAPLING = register("crystal_sapling", new AetherSaplingBlock(null, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING).sounds(BlockSoundGroup.GLASS)), buildingBlock());
-        CRYSTAL_LOG = register("crystal_log", createLogBlock(MaterialColor.GRAY, MaterialColor.LIGHT_GRAY), buildingBlock());
-        STRIPPED_CRYSTAL_LOG = register("stripped_crystal_log", createLogBlock(MaterialColor.LIGHT_GRAY, MaterialColor.LIGHT_GRAY), buildingBlock());
+        CRYSTAL_LOG = register("crystal_log", createLogBlock(MapColor.GRAY, MapColor.LIGHT_GRAY), buildingBlock());
+        STRIPPED_CRYSTAL_LOG = register("stripped_crystal_log", createLogBlock(MapColor.LIGHT_GRAY, MapColor.LIGHT_GRAY), buildingBlock());
         CRYSTAL_LEAVES = register("crystal_leaves", createLeavesBlock(BlockSoundGroup.GLASS), buildingBlock());
-        CRYSTAL_PLANKS = register("crystal_planks", new Block(FabricBlockSettings.copyOf(SKYROOT_PLANKS).materialColor(MaterialColor.LIGHT_GRAY)), buildingBlock());
+        CRYSTAL_PLANKS = register("crystal_planks", new Block(FabricBlockSettings.copyOf(SKYROOT_PLANKS).materialColor(MapColor.LIGHT_GRAY)), buildingBlock());
         CRYSTAL_FENCE = register("crystal_fence", new FenceBlock(FabricBlockSettings.copyOf(CRYSTAL_PLANKS)), buildingBlock());
         CRYSTAL_FENCE_GATE = register("crystal_fence_gate", new FenceGateBlock(FabricBlockSettings.copyOf(CRYSTAL_PLANKS)), buildingBlock());
         CRYSTAL_SLAB = register("crystal_slab", new AetherSlabBlock(CRYSTAL_PLANKS.getDefaultState()), buildingBlock());
@@ -357,8 +357,8 @@ public class AetherBlocks {
         return Registry.register(Registry.BLOCK, new Identifier(Aether.MODID, id), block);
     }
 
-    private static PillarBlock createLogBlock(MaterialColor topMaterialColor, MaterialColor sideMaterialColor) {
-        return new PillarBlock(AbstractBlock.Settings.of(Material.WOOD, (blockState) -> blockState.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMaterialColor : sideMaterialColor).strength(2.0F).sounds(BlockSoundGroup.WOOD));
+    private static PillarBlock createLogBlock(MapColor topMapColor, MapColor sideMapColor) {
+        return new PillarBlock(AbstractBlock.Settings.of(Material.WOOD, (blockState) -> blockState.get(PillarBlock.AXIS) == Direction.Axis.Y ? topMapColor : sideMapColor).strength(2.0F).sounds(BlockSoundGroup.WOOD));
     }
 
     private static LeavesBlock createLeavesBlock() {

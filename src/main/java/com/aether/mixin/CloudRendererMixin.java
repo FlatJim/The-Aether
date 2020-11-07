@@ -116,7 +116,7 @@ public final class CloudRendererMixin {
                     this.cloudsBuffer.close();
                 }
 
-                this.cloudsBuffer = new VertexBuffer(VertexFormats.POSITION_TEXTURE_COLOR_NORMAL);
+                this.cloudsBuffer = new VertexBuffer();
                 this.renderClouds(bufferBuilder, posX, renderHeight, posZ, cloudColor);
                 bufferBuilder.end();
                 this.cloudsBuffer.upload(bufferBuilder);
@@ -139,9 +139,8 @@ public final class CloudRendererMixin {
                         RenderSystem.colorMask(true, true, true, true);
                     }
 
-                    VertexBuffer cloudBuffer = this.cloudsBuffer;
                     Entry entry = matrices.peek();
-                    cloudBuffer.draw(entry.getModel(), 7);
+                    cloudsBuffer.draw(entry.getModel());
                 }
 
                 VertexBuffer.unbind();

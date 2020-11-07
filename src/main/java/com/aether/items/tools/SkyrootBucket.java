@@ -104,7 +104,7 @@ public class SkyrootBucket extends Item {
 
         if (entityPlayer instanceof ServerPlayerEntity) entityPlayer.incrementStat(Stats.USED.getOrCreateStat(this));
 
-        if (!entityPlayer.abilities.creativeMode) stack.setCount(stack.getCount() - 1);
+        if (!entityPlayer.isCreative()) stack.setCount(stack.getCount() - 1);
 
         if (stack.getItem() == AetherItems.SKYROOT_POISON_BUCKET) {
             // TODO: Hurt player
@@ -129,18 +129,18 @@ public class SkyrootBucket extends Item {
     }
 
     protected ItemStack emptyBucket(ItemStack p_203790_1_, PlayerEntity p_203790_2_) {
-        return !p_203790_2_.abilities.creativeMode ? new ItemStack(AetherItems.SKYROOT_BUCKET) : p_203790_1_;
+        return !p_203790_2_.isCreative() ? new ItemStack(AetherItems.SKYROOT_BUCKET) : p_203790_1_;
     }
 
     private ItemStack fillBucket(ItemStack emptyBuckets, PlayerEntity player, Item fullBucket) {
-        if (player.abilities.creativeMode) {
+        if (player.isCreative()) {
             return emptyBuckets;
         } else {
             emptyBuckets.setCount(emptyBuckets.getCount() - 1);
             if (emptyBuckets.isEmpty()) {
                 return new ItemStack(fullBucket);
             } else {
-                if (!player.inventory.insertStack(new ItemStack(fullBucket)))
+                if (!player.getInventory().insertStack(new ItemStack(fullBucket)))
                     player.dropItem(new ItemStack(fullBucket), false);
                 return emptyBuckets;
             }

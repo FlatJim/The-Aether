@@ -12,7 +12,7 @@ public class MoaEgg extends Item {
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext contextIn) {
-        if (contextIn.getPlayer().abilities.creativeMode) {
+        if (contextIn.getPlayer().isCreative()) {
 
             //TODO: Spawn Moa
 

@@ -19,11 +19,6 @@ public class AetherSlabBlock extends SlabBlock {
     }
 
     @Override
-    public boolean isIn(Tag<Block> tag) {
-        return tag == BlockTags.SLABS || (tag == BlockTags.WOODEN_SLABS && this == AetherBlocks.SKYROOT_SLAB) || super.isIn(tag);
-    }
-
-    @Override
     @Environment(EnvType.CLIENT)
     public boolean isSideInvisible(BlockState blockState_1, BlockState blockState_2, Direction direction_1) {
         return this.isAerogel() && blockState_2.getBlock() == this || super.isSideInvisible(blockState_1, blockState_2, direction_1);

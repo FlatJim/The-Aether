@@ -27,8 +27,8 @@ public class DartShooter extends Item {
         } else if (playerIn.getStackInHand(Hand.MAIN_HAND).getItem() == this.ammo) {
             return playerIn.getStackInHand(Hand.MAIN_HAND);
         } else {
-            for (int index = 0; index < playerIn.inventory.size(); ++index) {
-                ItemStack stack = playerIn.inventory.getStack(index);
+            for (int index = 0; index < playerIn.getInventory().size(); ++index) {
+                ItemStack stack = playerIn.getInventory().getStack(index);
                 if (stack.getItem() == this.ammo) return stack;
             }
             return ItemStack.EMPTY;
@@ -38,7 +38,7 @@ public class DartShooter extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack heldItem = playerIn.getStackInHand(handIn);
-        boolean bypassDartCheck = playerIn.abilities.creativeMode || EnchantmentHelper.getLevel(Enchantments.INFINITY, heldItem) > 0;
+        boolean bypassDartCheck = playerIn.isCreative() || EnchantmentHelper.getLevel(Enchantments.INFINITY, heldItem) > 0;
 
         ItemStack stack = this.findDartStack(playerIn);
 
